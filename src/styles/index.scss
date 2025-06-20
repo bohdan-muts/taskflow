@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&family=Rubik:wght@300;400;500;600;700;800&display=swap');
+@import './vars';
+@import '../pages/login/login';
+@import '../pages/mainPage/mainPage';
+@import '../components/common (general)/ProjectList/ProjectList';
+@import '../components/features (functional components)/GroupChat/GroupChat';
+@import '../components/features (functional components)/ProjectTask/ProjectTask';
+@import '../pages/registration/registration';
+@import '../components/forms/authForm';
+
+::-webkit-scrollbar {
+    width: 0px;
+} 
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    &:hover{
+        background: rgb(24, 24, 24);
+    }
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+}
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    min-height: 100vh;  
+}
+
+main{
+    max-height: 100vh;
+    display: flex;
+    flex: 1 1 100%;
+}
+a{
+    display: block;
+    color: $black;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+picture{
+    display: block;
+}
+img{
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+input{
+    width: 100%;
+    position: relative;
+    padding: 10px 15px;
+}
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+.container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+.btn {
+    width: 100%;
+    font-size: 13px;
+    padding: 10px 20px;
+    background-color: rgb(200, 201, 201);
+    border-radius: 5px;
+    &:hover{
+        background-color: rgb(160, 162, 163);
+    }
+
+    &.mini{
+        width: fit-content;
+        text-align: start;
+    }
+}
+.list {
+    display: flex;
+    gap: 5px;
+    
+    &.row{
+        flex-direction: row;
+    }
+    &.column{
+        flex-direction: column;
+    }
+}

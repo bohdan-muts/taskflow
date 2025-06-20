@@ -1,0 +1,66 @@
+.tasks{
+    height: 100%;
+    .tasks-board{
+        position: relative;
+        height: 100%;
+        display: flex;
+        gap: 20px;
+
+        .to-do-column{
+            position: relative;
+            width: calc((100% - 20px) / 3);
+            height: fit-content;
+            padding: 15px;
+            background-color: rgb(233, 227, 227);
+
+            .title{
+                margin-bottom: 10px;
+            }
+
+            .list{
+                flex-direction: column;
+
+                .task{
+                    position: relative;
+                    background-color: aliceblue;
+                    padding: 5px 5px 5px 18px;
+
+                    .list {text-align: start;}
+
+                    .until-date,
+                    .assigned-to {
+                        font-size: 10px;
+                    }
+
+                    .btn{
+                        &.mini{
+                            width: 28px;
+                            height: 30px;
+                            font-size: 22px;
+                            padding: 0 3px;
+                            text-align: center;
+                        }
+                    }
+
+                    .priority{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: block;
+                        width: 10px;
+                        height: 100%;
+                        &.green {
+                            background-color: green;
+                        }
+                        &.red{
+                            background-color: red;
+                        }
+                        &.orange{
+                            background-color: orange;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

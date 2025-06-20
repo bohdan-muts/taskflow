@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&family=Rubik:wght@300;400;500;600;700;800&display=swap");
+.login {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+
+.main-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.main-page .area {
+  position: relative;
+  padding: 20px;
+}
+.main-page .area.profile-area {
+  display: flex;
+  flex: 0 1 300px;
+  flex-direction: column;
+  align-items: start;
+  gap: 30px;
+  background-color: rgb(100, 146, 100);
+}
+.main-page .area.profile-area .user {
+  display: flex;
+  flex: 0 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+.main-page .area.profile-area .user .user-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: black;
+}
+.main-page .area.profile-area .user .user-name {
+  font-size: 20px;
+  text-align: start;
+}
+.main-page .area.profile-area .list {
+  width: 100%;
+}
+.main-page .area.profile-area .list .list-item {
+  padding: 10px;
+  background-color: grey;
+  text-align: start;
+}
+.main-page .area.content-area {
+  padding: 0;
+  flex: 3;
+  background-color: rgb(175, 99, 99);
+  display: flex;
+}
+.main-page .area.content-area .tasks {
+  padding: 20px;
+  flex: 1 1 40%;
+  background-color: aqua;
+}
+.main-page .area.content-area .chat {
+  padding: 20px;
+  flex: 0 1 40%;
+  background-color: cadetblue;
+}
+.main-page .area.users-area {
+  flex: 0 1 150px;
+  background-color: rgb(89, 89, 168);
+  overflow: hidden;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.group-chat {
+  height: 100%;
+}
+.group-chat .messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding: 10px 0;
+}
+.group-chat .messages .li-current-message {
+  position: relative;
+  display: flex;
+  justify-content: end;
+}
+.group-chat .messages .li-current-message .current-message {
+  background-color: #e1e1e1;
+  padding: 5px 10px;
+  text-align: start;
+  max-width: 75%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 10px 0 10px 10px;
+}
+.group-chat .messages .li-current-message .current-message .sender {
+  font-size: 12px;
+  color: #0093ff;
+}
+.group-chat .messages .li-current-message .current-message .text {
+  font-size: 17px;
+}
+.group-chat .messages .message {
+  background-color: #e1e1e1;
+  padding: 5px 10px;
+  text-align: start;
+  max-width: 75%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 0px 10px 10px 10px;
+}
+.group-chat .messages .message .sender {
+  font-size: 12px;
+  color: #0093ff;
+}
+.group-chat .messages .message .text {
+  font-size: 17px;
+}
+
+.tasks {
+  height: 100%;
+}
+.tasks .tasks-board {
+  position: relative;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+}
+.tasks .tasks-board .to-do-column {
+  position: relative;
+  width: calc((100% - 20px) / 3);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 15px;
+  background-color: rgb(233, 227, 227);
+}
+.tasks .tasks-board .to-do-column .title {
+  margin-bottom: 10px;
+}
+.tasks .tasks-board .to-do-column .list {
+  flex-direction: column;
+}
+.tasks .tasks-board .to-do-column .list .task {
+  position: relative;
+  background-color: aliceblue;
+  padding: 5px 5px 5px 18px;
+}
+.tasks .tasks-board .to-do-column .list .task .list {
+  text-align: start;
+}
+.tasks .tasks-board .to-do-column .list .task .until-date,
+.tasks .tasks-board .to-do-column .list .task .assigned-to {
+  font-size: 10px;
+}
+.tasks .tasks-board .to-do-column .list .task .btn.mini {
+  width: 28px;
+  height: 30px;
+  font-size: 22px;
+  padding: 0 3px;
+  text-align: center;
+}
+.tasks .tasks-board .to-do-column .list .task .priority {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 10px;
+  height: 100%;
+}
+.tasks .tasks-board .to-do-column .list .task .priority.green {
+  background-color: green;
+}
+.tasks .tasks-board .to-do-column .list .task .priority.red {
+  background-color: red;
+}
+.tasks .tasks-board .to-do-column .list .task .priority.orange {
+  background-color: orange;
+}
+
+.registration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 250px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(24, 24, 24);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  -webkit-user-select: none;
+          user-select: none;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  min-height: 100vh;
+}
+
+main {
+  max-height: 100vh;
+  display: flex;
+  flex: 1 1 100%;
+}
+
+a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+picture {
+  display: block;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  position: relative;
+  padding: 10px 15px;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.btn {
+  width: 100%;
+  font-size: 13px;
+  padding: 10px 20px;
+  background-color: rgb(200, 201, 201);
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: rgb(160, 162, 163);
+}
+.btn.mini {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: start;
+}
+
+.list {
+  display: flex;
+  gap: 5px;
+}
+.list.row {
+  flex-direction: row;
+}
+.list.column {
+  flex-direction: column;
+}

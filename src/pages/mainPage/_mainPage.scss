@@ -1,0 +1,81 @@
+.main-page{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+   
+
+    .area {
+        position: relative;
+        padding: 20px;
+        
+        &.profile-area {
+            display: flex;
+            flex: 0 1 300px;
+            flex-direction: column;
+            align-items: start;
+            gap: 30px;
+            background-color: rgb(100, 146, 100);
+
+           
+
+            .user{
+                display: flex;
+                flex: 0 1;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                width: 100%;
+
+                .user-logo{
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    background-color: black;
+                }
+                .user-name {
+                    font-size: 20px;
+                    text-align: start;
+                }
+            }
+        
+            .list {
+                width: 100%;
+                .list-item{
+                    padding: 10px;
+                    background-color: grey;
+                    text-align: start;
+                }
+            }
+        }
+    
+        &.content-area {
+            padding: 0;
+            flex: 3;
+            background-color: rgb(175, 99, 99);
+            display: flex;
+
+            .tasks{
+                padding: 20px;
+                flex: 1 1 40%;
+                background-color: aqua;
+            }
+            .chat{
+                padding: 20px;
+                flex: 0 1 40%;
+                background-color: cadetblue;
+
+               
+            }
+        }
+    
+        &.users-area {
+            flex: 0 1 150px;
+            background-color: rgb(89, 89, 168);
+            overflow: hidden;
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}
