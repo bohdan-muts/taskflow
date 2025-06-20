@@ -98,37 +98,19 @@ export const ProjectTask = ({ projectId, usersInProject }: Props) => {
                           <div ref={prov.innerRef} {...prov.draggableProps} {...prov.dragHandleProps} className="task">
                             {editingId === t.id ? (
                               <>
-                                <input
-                                  value={editingText}
-                                  onChange={(e) => setEditingText(e.target.value)}
-                                  style={{ margin: "0 0 5px 0" }}
-                                />
-                                <button className="btn mini" onClick={() => handleEditTask(t.id)} style={{ margin: "0 5px 0 0" }}>
-                                  ✔
-                                </button>
+                                <input value={editingText} onChange={(e) => setEditingText(e.target.value)} style={{ margin: "0 0 5px 0" }}/>
+                                <button className="btn mini" onClick={() => handleEditTask(t.id)} style={{ margin: "0 5px 0 0" }}>✔</button>
                                 <button className="btn mini" onClick={() => setEditingId(null)}>✖</button>
                               </>
                             ) : (
                               <>
-                                <span
-                                  className={`priority ${
-                                    t.priority === "high" ? "red" : t.priority === "medium" ? "orange" : "green"
-                                  }`}
-                                ></span>
+                                <span className={`priority ${t.priority === "high" ? "red" : t.priority === "medium" ? "orange" : "green"}`}></span>
                                 <div className="wrapper list column">
-                                  <p>
-                                    <strong className="text">Task: <br /></strong>{t.text}
-                                  </p>
-                                  <strong className="until-date">
-                                    Until: {t.doneDate ? formatDateForDisplay(t.doneDate) : "Unset"}
-                                  </strong>
-                                  <strong className="assigned-to">
-                                    Assigned to: <br /> {t.assignedTo || "—"}
-                                  </strong>
+                                  <p className="text"><strong>Task: <br /></strong>{t.text}</p>
+                                  <p className="until-date"><strong>Until: </strong>{t.doneDate ? formatDateForDisplay(t.doneDate) : "Unset"}</p>
+                                  <p className="assigned-to"><strong>Assigned to: <br /></strong>{t.assignedTo || "—"}</p>
                                 </div>
-                                <button className="btn mini" onClick={() => { setEditingId(t.id); setEditingText(t.text); }} style={{ margin: "0 5px 0 0" }}>
-                                  ✎
-                                </button>
+                                <button className="btn mini" onClick={() => { setEditingId(t.id); setEditingText(t.text); }} style={{ margin: "0 5px 0 0" }}>✎</button>
                                 <button className="btn mini" onClick={() => handleDeleteTask(t.id)}>🗑</button>
                               </>
                             )}
