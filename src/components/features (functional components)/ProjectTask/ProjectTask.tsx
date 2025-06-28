@@ -3,10 +3,13 @@ import { db } from "../../../firebase/firebase";
 import { useState, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import { TUsersInProject } from "../../../types/types";
+import { formatDateForDisplay } from "../../../utils/FormatData";
+import TaskStatsChart from "../../common (general)/Recharts/Chart";
 
 type Props = {
   projectId: string;
   usersInProject: TUsersInProject[];
+  tasksRechart: (tasks: any[]) => void;
 };
 
 const columnsFromTypes = {
@@ -15,15 +18,7 @@ const columnsFromTypes = {
   done: "Done",
 };
 
-const formatDateForDisplay = (isoDateString: string) => {
-  const date = new Date(isoDateString);
-  const day = String(date.getDate()).padStart(2, "0");
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const year = date.getFullYear();
-  return `${day}-${month}-${year}`;
-};
-
-export const ProjectTask = ({ projectId, usersInProject }: Props) => {
+export const ProjectTask = ({ projectId, usersInProject, tasksRechart}: Props) => {
   const [task, setTask] = useState("");
   const [doneDate, setDoneDate] = useState("");
   const [priority, setPriority] = useState("low");
@@ -35,12 +30,12 @@ export const ProjectTask = ({ projectId, usersInProject }: Props) => {
   useEffect(() => {
     const q = query(collection(db, `projects/${projectId}/tasks`), orderBy("createdAt", "asc"));
     return onSnapshot(q, (snapshot) => {
-      setTasks(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }))
-      );
+      const taskData = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }))
+      setTasks(taskData);
+      tasksRechart(taskData)
     });
   }, [projectId]);
 
@@ -77,7 +72,7 @@ export const ProjectTask = ({ projectId, usersInProject }: Props) => {
     const { destination, source, draggableId } = result;
     if (!destination || destination.droppableId === source.droppableId) return;
     await updateDoc(doc(db, `projects/${projectId}/tasks`, draggableId), {
-      status: destination.droppableId,
+      status: destination.droppableId
     });
   };
 

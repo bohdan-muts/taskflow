@@ -1,6 +1,6 @@
 export type TUsersInProject = {
-   uid: string;
-   email: string;
+  uid: string;
+  email: string;
 };
 
 export type TFormData = {
